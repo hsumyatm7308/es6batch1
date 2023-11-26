@@ -1,0 +1,47 @@
+Javascript / ECMASCRIPT / ES2015 / ES 2016 / Modern Javascript 
+
+
+1995 
+
+=> ECMA 
+Ecam International (European Computer Manufacturers Association )
+
+
+1997 - ES1
+1998 - ES2
+1999 - ES3
+2009 - ES5 
+2015 - ES6 ( CORE PROGRAMMING LANGUAGE )
+2016 - ES7 
+2017 - ES8 
+2018 - ES9 
+2019 - ES10 
+
+
+ecma international.org   - javascript official website 
+
+=>ES6 ( Variables are declared let & const )
+var 
+   - Global and Function Scope 
+   - Value can change 
+   - var shouldn't be used in ES6 
+
+let 
+   - Block Scope 
+   - Value can change 
+
+const 
+   - Blocak Scope 
+   - Value can't change 
+
+------------------------------------------ 
+
+=>Exercise 
+   
+    var x = 100; 
+       x = 200;
+
+    var x = 300;
+    console.log(x);
+
+    

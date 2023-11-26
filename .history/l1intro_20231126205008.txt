@@ -1,0 +1,15 @@
+Javascript 
+
+
+1995 
+
+=> ECMA 
+Ecam International (European Computer Manufacturers Association )
+
+
+1997 - ES1
+1998 - ES2
+1999 - ES3
+2009 - ES5 
+2015 - ES6 ( CORE PROGRAMMING LANGUAGE )
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteration</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // =>Array Call Back Method 
+
+        // forEach 
+        // map 
+        // filter 
+        // find 
+        // reduce 
+        // some 
+        // every 
+
+        // for(let x =0; x < array.length; x++){
+        //     code to be executed 
+        // }
+
+        // for (let key in obj){
+        //     code to be executed
+        // }
+
+        // for (let value of array) {
+        //  code to be executed
+        // }
+
+        document.write("<h3>For Loop</h3>")
+
+        let mycolors = ["red","green","blue","orange","grey"];
+
+        for (let x =0; x < mycolors.length; x++){
+            document.write(mycolors[x]+"<br>");
+        }
+
+       
+        document.write("<h3>For In Loop</h3>")
+        
+        let customers = {
+            name:"Aung Aung",
+            city:"Mandalay",
+            parent:"U Ba",
+            phone:"1234567"
+        };
+
+        for ( let key in customers){
+            console.log(key);
+        }
+
+    </script>
+
+</body>
+
+</html>

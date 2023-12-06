@@ -100,98 +100,12 @@
 
 
        const ladies =    employees.map(employee => {
-        //   return employee;
-        // return `Ms.${employee}`;
-        return `${++idx} Ms.${employee}`;
-
+          return employee;
         });
 
-        // * when you retrun the map, its result return as " array";
         console.log(ladies); 
 
 
-        const visitors = ["su su","lu lu","nu nu","yu yu","pu pu"]
-        const guys = visitors.map(visitor=>`Ms.${visitor}`)
-        console.log(guys);
-
-        visitors.forEach(visitor=>{
-            console.log("forEachr result is Ms.".visitor ); //string 
-
-            return `Ms.${visitor}` // undefined
-        })
-        console.log(visitors);
-
-
-        const employers = ["su su","lu lu","nu nu","yu yu","pu pu"]
-        const arr1  = employers.map(employer=>{
-            return employer;
-        })
-
-        const arr2 = arr1.filter(owner=>{
-            // if (owner === 'su su'){
-            //     return false;
-            // }else{
-            //     return true
-            // }
-
-            if (owner === 'su su'){
-                return false;
-            }
-
-            return true;
-        });
-
-        const owners = employers.map(employer=>{
-            return employer;
-        }).filter(owner=>{
-            // if (owner === 'su su'){
-            //     return false;
-            // }else{
-            //     return true
-            // }
-
-            if (owner === 'su su'){
-                return false;
-            }
-
-            return true;
-        });
-
-        console.log(owners)
-
-        firstnames = ["aung","kyaw","soe"];
-
-        const name1 = firstname.map((firstname)=>{
-            return firstname + 'ko ko';
-        })
-
-
-        const name2 = firstname.map(firstname=>{
-            return `${firstname} hla`;
-            
-            
-            
-        })
-
-        console.log(name2);
-
-        const name3 = firstnames.map(firstname => `${firstname}`)
-
-
-        const sport = "bike";
-
-        const contestants = ["aung aung","kyaw kyaw","maung maung","tun tun","linn linn"];
-
-        const winners = contestants.map((constant,div)=>(
-            {
-               name : constant,
-               sport,
-               prize : ++idx
-            }
-        ))
-
-
-        console.log(winners)
         
 
     </script>

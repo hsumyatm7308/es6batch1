@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Object Literal</title>
+</head>
+
+<body>
+
+    <script>
+        // => Object 
+
+        let person1 = {
+            name: "Aung Aung",
+            age: 20,
+            gender: "male"
+
+        }
+
+        console.log(person1);
+        console.log(person1.name);
+        console.log(person1['gender']);
+
+        person1.city = "Yangon";   //city so tar par lar lane mal 
+
+
+        let person2 = person1; // clone including city 
+
+        person2.hobby = "sport"; // it consist of hobby 
+
+
+        let person3 = Object.freeze(person1);  // can't append , can't matainance 
+        console.log(person3)
+        // age
+        // : 
+        // 20
+        // city
+        // : 
+        // "Yangon"
+        // gender
+        // : 
+        // "male"
+        // hobby
+        // : 
+        // "sport"
+        // name
+        // : 
+        // "Aung Aung"
+
+        const employees = {
+            name : 'yu yu',
+            position:'graphic designer',
+            salary : 50000
+        };
+        const {name,salary} = employees;
+        console.log(name)
+        console.log(salary)
+
+        const employers = {
+            fullname : "su su",
+            company : "abc.co.,ltd",
+            location : "yangon",
+            posts:{
+                officestaff:{
+                    gender:"female",
+                    salary:6000000
+
+                },
+                driver:{
+                    gender:"male",
+                    salary:30000000
+                }
+            },
+            links:{
+                social:{
+                    gmail: "admin@abc.com",
+                    facebook : "https://facebook.com/abccompany"
+                }
+            }
+        
+            }
+        
+
+    </script>
+</body>
+
+</html>

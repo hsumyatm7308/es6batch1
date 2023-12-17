@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+
+            // =>array 
+
+            let male = "Aung Aung";
+            let female = "Su Su";
+            console.log(male,female);  // Aung Aung Su Su 
+
+            [male,female] = [female,male];
+            console.log(male,female);  // Su Su Aung Aung
+            
+            const colors = ["red","green","blue","white","black"];
+
+            console.log(colors[0]);//red 
+
+            // const can use  in for of 
+            for(const color of colors){
+                
+                 console.log(color);
+            }
+
+            const arrs = color.entries();
+            console.log(arrs); // Array Iterate {}
+
+            console.log(arrs.next()); // {value:Array(2), done:false}
+            console.log(arrs.next()); // {value:Array(2), done:false}
+            console.log(arrs.next()); // {value:Array(2), done:false}
+            console.log(arrs.next()); // {value:Array(2), done:false}
+            console.log(arrs.next()); // {value:Array(2), done:false}
+            console.log(arrs.next()); // {value:Array(2), done:true}
+
+
+            for(const color of  colors.entries()){
+                console.log(color)
+                console.log(color[0])
+            }
+
+        </script>
+    </body>
+</html>

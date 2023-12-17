@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rest Parameter / Rest Operator</title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+
+            //  ...   return  Array 
+
+            function city(val){
+                return val;
+            }
+
+            console.log(city()); //undefined
+            console.log(city('yangon')); 
+            console.log(city('yangon','mandalay','bago')); //yangon
+            
+            function country(...vals){
+                return vals;
+            }
+
+
+            console.log(country('myanmar')); // ['myanmar']
+            console.log(country('myanmar','thailand')); // ['myanmar','thailand']
+
+
+            function place(location,...vals){
+                return location;
+                return vals; (2) ['nagapali','ngwesaung']
+            }
+
+
+        </script>
+    </body>
+</html>

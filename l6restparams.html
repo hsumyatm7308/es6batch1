@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Rest Parameter / Rest Operator</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <script type="text/javascript">
+      //  ...   return  Array
+      // Note: can't set first and between
+      //  can contain just one rest parameter
 
-        //  ...   return  Array 
-        // Note: can't set first and between 
-        //  can contain just one rest parameter 
+      function example(num1, num2, ...num3) {
+        console.log(num1, num2, num3);
+      }
 
-        function example(num1, num2, ...num3) {
-            console.log(num1, num2, num3);
+      example(10, 20, 30, 40, 50, 60);
+
+      function city(val) {
+        return val;
+      }
+
+      console.log(city()); //undefined
+      console.log(city("yangon"));
+      console.log(city("yangon", "mandalay", "bago")); //yangon
+
+      function country(...vals) {
+        return vals;
+      }
+
+      console.log(country("myanmar")); // ['myanmar']
+      console.log(country("myanmar", "thailand")); // ['myanmar','thailand']
+
+      function place(location, ...vals) {
+        // return location; //chaung thar
+        return vals; // (2) ['nagapali','ngwesaung']
+      }
+
+      console.log(place("chaung thar", "nagapali", "ngwesaung"));
+
+      let animal = new Function("...vals", "return vals");
+
+      console.log(animal("cat", "goat", "fish"));
+
+      function sumresult(...nums) {
+        let total = 0;
+
+        for (const num of numx) {
+          total = num;
         }
 
-        example(10, 20, 30, 40, 50, 60)
+        return total;
+      }
 
-
-
-
-        function city(val) {
-            return val;
-        }
-
-        console.log(city()); //undefined
-        console.log(city('yangon'));
-        console.log(city('yangon', 'mandalay', 'bago')); //yangon
-
-        function country(...vals) {
-            return vals;
-        }
-
-
-        console.log(country('myanmar')); // ['myanmar']
-        console.log(country('myanmar', 'thailand')); // ['myanmar','thailand']
-
-
-        function place(location, ...vals) {
-            // return location; //chaung thar
-            return vals; // (2) ['nagapali','ngwesaung']
-        }
-
-        console.log(place('chaung thar', 'nagapali', 'ngwesaung'));
-
-
-        let animal = new Function('...vals', 'return vals');
-
-        console.log(animal('cat', 'goat', 'fish'))
-
-
-
-
+      console.log(sumresult(10, 20, 30, 40, 50)); // 150
+      console.log(sumresult([10, 20, 30, 40, 50]));
     </script>
-</body>
-
+  </body>
 </html>
 
 <!-- 17RP  -->

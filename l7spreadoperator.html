@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spread Operator</title>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Spread Operator 
+
+            let val; 
+            val = Math.max(1,3,7,9,11,13,17,19,-20,0);
+            console.log(val);
+
+            val = Math.min(1,2,5,7,8,8,9,9,20);
+            console.log(val);
+
+            val = [10,20,40,50];
+            console.log(Math.max(val));
+            console.log(Math.min(val)); //NaN
+            console.log(Math.max(...val));
+            console.log(Math.min(...val));//10
+
+
+            function sumresult(num1,num2,num3){
+                return num1,num2,num3
+            }
+
+            console.log(sumresult(1,2,3))//6
+            console.log(sumresult([1,2,3])) // 1,2,3 undefined undefinedundefined
+
+            const numbers = [10,20,30];
+            console.log(sumresult(...numbers)); //60
+            console.log(sumresult.apply(null,numbers)); //60
+
+
+            function getval(val1,val2,val3){
+                console.log("val1 result is = ",val1);
+                console.log("val2 result is = ",val2);
+                console.log("val3 result is = ",val3);
+
+            }
+
+            getval('su su','yu yu','nu nu');
+            getval(['su su','yu yu','nu nu']);
+            getval(...['su su','yu yu','nu nu']);
+            getval.apply(null,['su su','yu yu','nu nu']);
+
+
+            const color = "Red";
+            console.log(color); //Red 
+            console.log(...color); //R e d 
+
+            getval(color); // val1 result is Red val2 result is = undefined val3 result is = undefined 
+            getval(...color); //val result is = R val2 result is = e val3 result i s= d 
+
+
+            console.log(...[color]); //Red 
+            console.log(...['Red']); //Red 
+            console.log(['Red','Green','Blue']); //['Red','Green','Blue']
+
+            console.log(...color); //R e d 
+            console.log([...color]); // (3) ['R','e','d']
+            console.log([...'Red']); // (3) ['R','e','d']
+
+            console.log(color.split(''));// (3) ['R','e','d']
+
+            console.log(['Red','Green','Blue']); ///['Red','Green','Blue']
+            console.log([...'Red','Green','Blue']); //[(3) ['Red', 'Green', 'Blue']
+            console.log(['...Red',...'Green',...'Blue']); //(10) ['...Red', 'G', 'r', 'e', 'e', 'n', 'B', 'l', 'u', 'e']
+
+
+            console.log([...'123',...'456','70',80,90]);//(9) ['1', '2', '3', '4', '5', '6', '70', 80, 90]
+            console.log([...[123],...[456],...'789','70',80,90]); //(8) [123, 456, '7', '8', '9', '70', 80, 90]
+
+
+            //Spread In Array 
+
+            const phones = ["apple","oppo","vivo","samsung"];
+            const cars = ["toyota","suzuki","mazda"];
+            const computers = ["mac","aoc","acer"];
+
+            let myowns = [phones,cars,computers];
+            console.log(myowns);//(3) [Array(4), Array(3), Array(3)]
+
+            myowns = [...phones,...cars,...computers];
+            console.log(myowns);//(10) ['apple', 'oppo', 'vivo', 'samsung', 'toyota', 'suzuki', 'mazda', 'mac', 'aoc', 'acer']
+        </script> 
+
+    </body>
+</html>

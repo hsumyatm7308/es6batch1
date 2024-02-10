@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Argument Object</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        //Argument 
+
+
+        function getname(first, last) {
+            console.log(first, last)
+        }
+
+
+        getname("aung",)
+
+        function getfullname(firstmlas, lastname
+        ) {
+            console.log(arguments); //Arguments(2)
+            console.log(typeof arguments)
+            console.log(arguments[0])
+            console.log(arguments[1])
+        }
+
+        getfullname('aung', 'kyaw')
+
+        function getcountry() {
+            console.log(arguments);
+            console.log(arguments[0]);
+        }
+
+        getcountry();
+        getcountry('Thailand')
+
+        //Error 
+        const getcity = () => {
+            console.log(arguments)
+        }
+
+        getcity();
+        getcity('Indonesia') //Uncaught ReferenceError 
+
+
+        function getnumber() {
+            let result = 0;
+
+            for (const val of arguments) {
+                result += val;
+
+            }
+            return result;
+        }
+
+        console.log(getnumber(10, 20, 30, 40, 50))
+
+        const amounts = [10, 20, 30, 40, 50]
+
+        function totalresult() {
+            let total = 0;
+
+            for (let x = 0; x < arguments.length; x++) {
+                total += arguments[x];
+            }
+        }
+
+        console.log(totalresult(10, 20, 30, 40, 50))
+
+
+
+        console.log(totalresult(...amounts))
+        console.log(totalresult(...[10, 20, 30, 40, 50]))
+
+        // 24AO 
+
+
+    </script>
+</body>
+
+</html>

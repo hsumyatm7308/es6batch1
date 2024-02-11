@@ -8,7 +8,7 @@
 <body>
 
     <script type="text/javascript">
-        //Argument 
+        //Argument    
 
 
         function getname(first, last) {
@@ -36,13 +36,13 @@
         getcountry();
         getcountry('Thailand')
 
-        //Error 
-        const getcity = () => {
-            console.log(arguments)
-        }
+        //Error    can't use in arrow function 
+        // const getcity = () => {
+        //     console.log(arguments)
+        // }
 
-        getcity();
-        getcity('Indonesia') //Uncaught ReferenceError 
+        // getcity();
+        // getcity('Indonesia') //Uncaught ReferenceError 
 
 
         function getnumber() {
@@ -77,7 +77,27 @@
         // 24AO 
 
 
+        // Error    because of arguments array
+        // function sumresult() {
+        //     let sum = arguments.reduce((total, curr) => (total += curr), 0);
+        //     return sum;
+        // }
+
+        // console.log(sumresult(10, 20, 30, 40, 50));
+
+
+        function sumresult() {
+            let sum = Array.from(arguments).reduce((total, curr) => (total += curr), 0);
+            return sum;
+        }
+
+        console.log(sumresult(10, 20, 30, 40, 50));
+
+
     </script>
 </body>
 
 </html>
+
+
+<!-- 11AO  -->

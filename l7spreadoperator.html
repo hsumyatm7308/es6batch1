@@ -118,6 +118,51 @@
 
         bios = { ...profiles, ...infos, ..."Myanmar" };
 
+
+
+        const students = [..."hello", { name: "aung aung" }];
+        console.log(students);
+
+        const persons = {
+            name: "Tun Tun",
+            gender: "Male",
+            age: 22
+        };
+
+        // const customers = {
+        //     ...persons
+        // }    // ta kar htal object pyay p thar      = const customers = persons; 
+
+
+
+        const phone = "0911111";
+        const country = "Myanmar";
+        const key1 = "nickname";
+        const key2 = "favcolor";
+
+
+        // const customers = {
+        //     ...persons,
+        //     hascar: true,
+        //     tel: phone,
+        //     country: country,
+        //     key1: "kaung kaung", // variable name ko d tine thone loh ma yo
+        //     key2: "black"         // variable name ko d tine thone loh ma ya 
+
+        // };
+
+
+        const customers = {
+            ...persons,
+            hascar: true,
+            tel: phone,
+            country: country,
+            [key1]: "kaung kaung", // variable name ko tone yin  array htal htae 
+            [key2]: "black"
+
+        };
+
+        console.log(customers);
     </script>
 
 </body>

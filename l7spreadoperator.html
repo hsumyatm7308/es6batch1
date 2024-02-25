@@ -163,6 +163,35 @@
         };
 
         console.log(customers);
+
+
+        const keyassign = (obj, key, val) => {
+            const getobj = obj;
+            getobj[key] = val;
+            console.log(getobj);
+
+
+            const takeobj = {
+                ...obj
+            };
+            takeobj[key] = val;
+            console.log(takeobj);// ta ku tal paung twor 
+
+            const setobj = {
+                ...obj,
+                [key]: val
+            }
+
+            console.log(setobj);
+        }
+
+        keyassign(customers, "job", "Developer");
+
+
+
+
+        // 25OP 
+
     </script>
 
 </body>

@@ -59,7 +59,7 @@
         const employers = {
             fullname: "su su",
             company: "abc.co.,ltd",
-            location: "yangon",
+            // location: "yangon",
             posts: {
                 officestaff: {
                     gender: "female",
@@ -80,7 +80,7 @@
 
         }
 
-        const { fullname, company, location, posts, links } = employers;
+        const { fullname, company, posts, links } = employers;
 
         // => Alais 
 
@@ -100,7 +100,7 @@
         console.log(height); // Now it won't be undefined
 
 
-        const {bg:background = "white",p:padding="10px",flex:flexbox} = {bg:"black"} 
+        const { bg: background = "white", p: padding = "10px", flex: flexbox } = { bg: "black" }
 
         console.log(bg); //error 
         console.log(p);  //error
@@ -108,14 +108,14 @@
         console.log(padding); //10px
         console.log(flexbox)
 
-        function exchangerage(amount){
+        function exchangerage(amount) {
             const rates = {
-                mmk:amount = 30000,
-                thb:amount = 40,
-                sgd:amount = 1.35
+                mmk: amount = 30000,
+                thb: amount = 40,
+                sgd: amount = 1.35
             }
 
-            return rates 
+            return rates
         }
 
         const currency = exchangerage(10)
@@ -123,12 +123,71 @@
         console.log(currency.mmk) // 30000
 
 
-        const {mmk,thb,sgd} = exchangerage(10)
+        const { mmk, thb, sgd } = exchangerage(10)
         console.log(mmk)
         console.log(thb)
         console.log(sgd)
 
 
+
+        const item = "Redbull Energy Drink";
+        const type = "Can";
+        const iteminfo = {
+            item: item,
+            type,
+            myfun: function () {
+                return "hello world";
+            },
+            madeby(country) {
+                return `This product is made by ${country}`;
+            }
+        }
+
+        console.log(iteminfo);
+        console.log(iteminfo.item);
+        console.log(iteminfo['type']);
+        console.log(iteminfo.myfun());
+        console.log(iteminfo.madeby('thailand'));
+
+
+
+        const name1 = "Aung Aung";
+        const name2 = "Su Su";
+        const title = "New Task";
+        const position = "Finance Officer";
+        const role = "Located";
+        const department = "Accounting Room";
+
+        const job = {
+            name: name1,
+            title: position
+        };
+
+        console.log(job); // 
+
+        console.log(job["Aung Aung"]); // [name1]:name1, Oki, but don't do 
+
+
+        const assigns = {};
+        assigns['fullname'] = name1;
+        assigns[title] = position;
+        assigns[role] = department;
+
+        console.log(assigns);
+
+
+        const tasks = {
+            ['fullname']: name2,
+            [title]: position,
+            [role]: department,
+            // [1 + 2 + 3]: 'result'
+        };
+
+
+        console.log(tasks);
+        console.log(tasks.fullname); //Su su 
+        // console.log(tasks.6);//error don't do 
+        // console.log(tasks[6]); //result , don't do 
 
 
     </script>

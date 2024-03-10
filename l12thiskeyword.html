@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>This keyword</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        //    Fat Arrow Function (=> Fat Arrow ) in ECMA6
+        // Lexical Scope  (this)
+
+
+        // Name Less Regular Function = this work
+        // Name Less Arrow Function = this not wokring
+
+        // Callback Regular Function = this not working
+        // Callback Arrow Function = this work 
+
+        function greeting() {
+            console.log('Good Night');
+            console.log(this);
+        }
+
+        greeting(); //Good Night //Window
+
+        const sayhi = function () {
+            console.log(this);
+        }
+
+        sayhi(); //window 
+
+
+        const hifi = () => {
+            console.log(this);
+        }
+
+        hifi(); //window
+
+
+
+        // var
+        // => Terminal type var name = "aung aung"
+        // => Terminal type name // 'aung aung'
+        // => Terminal type window.name  // 'aung aung'
+        // => Terminal type window; (extend windows > name (yes))
+
+
+        // let
+        // => Terminal type let name = "su su"
+        // => Terminal type name // 'su su'
+        // => Terminal type window.name  // 'aung aung'
+        // => Terminal type window; (extend windows > name (no))
+
+
+        // const
+        // => Terminal type const name = "thiha"
+        // => Terminal type name // 'thiha'
+        // => Terminal type window.name  // 'aung aung'
+        // => Terminal type window; (extend windows > name (no))
+
+
+        const items = {
+            product: "IPhone 15",
+            pricce: 2000,
+            info: function () {
+                return `${this.product} Price is base on ${this.pricce} USD.`; //IPhone 15 Price is base on 2000 USD.
+            },
+
+            discount: () => {
+                return `Use ${this.price} USD for ${this.product}! Get 20% cash back`; // Use undefined USD for undefined! Get 20% cash back
+            }
+        };
+
+        console.log(items);
+        console.log(items.info()); //IPhone 15 Price is base on 2000 USD.
+        console.log(items.discount()); //Use undefined USD for undefined! Get 20% cash back
+
+
+        const group = {
+            members: ["aung aung", "su su"],
+            groupname: "Frontend Designer",
+
+            groupmembers: () => {
+                // console.log(`There are ${this.members.length} members on this ${$this.groupname}`) // can't because of nameless arrow function 
+                console.log(`There are 2 members on this ${$this.groupname}`) // can't because of nameless arrow function 
+            },
+
+            groupinfo: function () {
+                return this.members.map(member => {
+                    console.log(`${member} is on ${this.groupname} group`); // aung aung is key person on this undefined group
+
+                })
+            },
+
+            groupsay: function () {
+                return this.members.map(function (member) {
+                    console.log(`${member} is key person on this ${this.groupname} group`); // because callback regular function
+                })
+            }
+        };
+
+        console.log(group);
+        // console.log(group.groupmembers());
+        group.groupinfo()
+        group.groupsay(); // su su is key person on this undefined group  
+
+
+
+
+        function createitem(inventory) {
+            return {
+                // stock: inventory
+                inventory,
+                itemvalue: function () {
+                    return this.inventory.reduce((total, cur) => {
+                        total += cur.price
+                        return total;
+                    }, 0);
+                }
+            }
+        }
+
+        const inventory = [
+            { title: "Rebull", price: 1500 },
+            { title: "Sponsor", price: 1000 }
+        ];
+        const getresult = createitem(inventory);
+        console.log(getresult);
+        console.log(getresult.itemvalue());
+
+
+    </script>
+</body>
+
+</html>

@@ -34,123 +34,123 @@
 
         document.write("<h3>For Loop</h3>")
 
-        let mycolors = ["red","green","blue","orange","grey"];
+        let mycolors = ["red", "green", "blue", "orange", "grey"];
 
-        for (let x =0; x < mycolors.length; x++){
-            document.write(mycolors[x]+"<br>");
+        for (let x = 0; x < mycolors.length; x++) {
+            document.write(mycolors[x] + "<br>");
         }
 
-       
+
         document.write("<h3>For In Loop</h3>")
-        
+
         let customers = {
-            name:"Aung Aung",
-            city:"Mandalay",
-            parent:"U Ba",
-            phone:"1234567"
+            name: "Aung Aung",
+            city: "Mandalay",
+            parent: "U Ba",
+            phone: "1234567"
         };
 
-        for ( let key in customers){
+        for (let key in customers) {
             console.log(key);
             console.log(customers.key) //undefined
             document.write(`${key} + ${customers[key]}`)
         }
 
-        const ourteam = ["kayw kyaw","aung aung","maung maung","kaung kaung"];
-        for(idx in ourteam){
-            document.write("for in loop result1 = "+ ourteam[idx])
+        const ourteam = ["kayw kyaw", "aung aung", "maung maung", "kaung kaung"];
+        for (idx in ourteam) {
+            document.write("for in loop result1 = " + ourteam[idx])
         }
 
 
         document.write("<h3>For Of Loop</h3>")
 
-        const members = ["su su","lu lu","nu nu","yu yu"]
-        for(let member of members){
+        const members = ["su su", "lu lu", "nu nu", "yu yu"]
+        for (let member of members) {
             console.log(member);
 
         }
 
         document.write("<h3>forEach Loop </h3>")
 
-        const students = ["su su","lu lu","nu nu","yu yu","pu pu"]
+        const students = ["su su", "lu lu", "nu nu", "yu yu", "pu pu"]
 
-        students.forEach(student=>{
+        students.forEach(student => {
             console.log(student);
-            document.write("for each loop result1 = "+ student)
+            document.write("for each loop result1 = " + student)
 
         })
 
-        const colors = ["red","green","blue","white","black"];
+        // const colors = ["red", "green", "blue", "white", "black"];
 
-        colors.forEach((color,idx)=>{
-            console.log(`Index number`. idx `color` .color)
-        })
+        // colors.forEach((color, idx) => {
+        //     console.log(`Index number`.idx`color`.color)
+        // })
 
 
         document.write("<h3> Map Loop </h3>")
 
-        const employees = ["su su","lu lu","nu nu","yu yu","pu pu"]
+        const employees = ["su su", "lu lu", "nu nu", "yu yu", "pu pu"]
 
 
         employees.map(employee => {
             console.log(employee); // the result is string and simaller with foreach
-            document.write("map loop result = "+ employee)
+            document.write("map loop result = " + employee)
 
         });
 
 
-       const ladies =    employees.map(employee => {
-        //   return employee;
-        // return `Ms.${employee}`;
-        return `${++idx} Ms.${employee}`;
+        const ladies = employees.map(employee => {
+            //   return employee;
+            // return `Ms.${employee}`;
+            return `${++idx} Ms.${employee}`;
 
         });
 
         // * when you retrun the map, its result return as " array";
-        console.log(ladies); 
+        console.log(ladies);
 
 
-        const visitors = ["su su","lu lu","nu nu","yu yu","pu pu"]
-        const guys = visitors.map(visitor=>`Ms.${visitor}`)
+        const visitors = ["su su", "lu lu", "nu nu", "yu yu", "pu pu"]
+        const guys = visitors.map(visitor => `Ms.${visitor}`)
         console.log(guys);
 
-        visitors.forEach(visitor=>{
-            console.log("forEachr result is Ms.".visitor ); //string 
+        visitors.forEach(visitor => {
+            console.log("forEachr result is Ms.".visitor); //string 
 
             return `Ms.${visitor}` // undefined
         })
         console.log(visitors);
 
 
-        const employers = ["su su","lu lu","nu nu","yu yu","pu pu"]
-        const arr1  = employers.map(employer=>{
+        const employers = ["su su", "lu lu", "nu nu", "yu yu", "pu pu"]
+        const arr1 = employers.map(employer => {
             return employer;
         })
 
-        const arr2 = arr1.filter(owner=>{
+        const arr2 = arr1.filter(owner => {
             // if (owner === 'su su'){
             //     return false;
             // }else{
             //     return true
             // }
 
-            if (owner === 'su su'){
+            if (owner === 'su su') {
                 return false;
             }
 
             return true;
         });
 
-        const owners = employers.map(employer=>{
+        const owners = employers.map(employer => {
             return employer;
-        }).filter(owner=>{
+        }).filter(owner => {
             // if (owner === 'su su'){
             //     return false;
             // }else{
             //     return true
             // }
 
-            if (owner === 'su su'){
+            if (owner === 'su su') {
                 return false;
             }
 
@@ -159,55 +159,112 @@
 
         console.log(owners)
 
-        firstnames = ["aung","kyaw","soe"];
+        firstnames = ["aung", "kyaw", "soe"];
 
-        const name1 = firstname.map((firstname)=>{
-            return firstname + 'ko ko';
-        })
+        // const name1 = firstname.map((firstname) => {
+        //     return firstname + 'ko ko';
+        // })
 
 
-        const name2 = firstname.map(firstname=>{
-            return `${firstname} hla`;
-            
-            
-            
-        })
+        // const name2 = firstname.map(firstname => {
+        //     return `${firstname} hla`;
 
-        console.log(name2);
+
+
+        // })
+
+        // console.log(name2);
 
         const name3 = firstnames.map(firstname => `${firstname}`)
 
 
         const sport = "bike";
 
-        const contestants = ["aung aung","kyaw kyaw","maung maung","tun tun","linn linn"];
+        const contestants = ["aung aung", "kyaw kyaw", "maung maung", "tun tun", "linn linn"];
 
-        const winners = contestants.map((constant,div)=>(
+        const winners = contestants.map((constant, div) => (
             {
-               name : constant,
-               sport,
-               prize : ++idx
+                name: constant,
+                sport,
+                prize: ++idx
             }
         ))
 
 
-        console.log(winners)
+        // console.log(winners)
 
 
         document.write("<h3>Filter</h3>")
-        const ages = [20,25,17,80,10,12,24,89,86];
+        const ages = [20, 25, 17, 80, 10, 12, 24, 89, 86];
 
-        const getover18 = ages.filter(age=>{
+        const getover18 = ages.filter(age => {
             return age > 18;
         })
 
-        document.write("filter result" + getover18 );
+        document.write("filter result" + getover18);
 
-        const getover20 = age.filter(age => age > 20)
-;        
+        const getover20 = ages.filter(age => age > 20)
+
+
+        // every 
+        // some 
+
+
+
+        const users = [
+            { name: "aung aung", age: 20 },
+            { name: "Kyaw Kyaw", age: 21 },
+            { name: "tun tun", age: 22 },
+            { name: "zaw zaw", age: 23 },
+            { name: "linn linn", age: 24 },
+        ]
+
+        console.log(users);
+
+        const filterresult = users.filter(function (user) {
+
+            return user.name === "zaw zaw";
+
+        });
+
+        console.log(filterresult);
+
+        const filterbyage = users.filter(function (user) {
+
+            return user.age > 22;
+
+        });
+
+        console.log(filterbyage);
+
+
+        // const findresult = users.find(function (user)) {
+        //     return user.name === "zaw zaw";
+        // }
+
+        // console.log(findresult);
+
+
+        const posts = [
+            { id: 1, title: "New Post One" },
+            { id: 2, title: "New Post Two" },
+            { id: 3, title: "New Post Three" },
+        ]
+
+        const comment = { post_id: 1, message: "nice post one", user_id: 10 }
+
+        function postcomment(posts, comment) {
+            return posts.find(function (post) {
+                return post.id === comment.post_id;
+            });
+        }
+
+        console.log(postcomment(posts, comment));
 
     </script>
 
 </body>
 
 </html>
+
+<!-- 3TH -->

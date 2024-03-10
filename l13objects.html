@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Object</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+
+        // => Object Literals 
+
+        const person = {
+            // properties 
+            name: "aung aung",
+            age: 25,
+            address: {
+                street: "No.60.myitt",
+                city: "Mandaly"
+            },
+
+            // method / member method 
+            job: function () {
+                console.log('Frontend Web Designer');
+            }
+        };
+
+        // We have 2 way to create an object 
+        // (i) Factory Function
+        //  (ii) Constructor Function
+
+
+        // (i) Factory Function 
+
+        function info(val) {
+            return {
+
+                // properties 
+                name: val,
+
+                // method 
+                job: function () {
+                    console.log(`${val} is Frontend Web Designer`);
+                }
+
+            }
+        }
+
+        const getinfo = info("aung aung");
+        console.log(getinfo);
+        console.log(getinfo.name);
+        console.log(getinfo.job())
+
+        const getinfokeys = Object.keys(getinfo);
+        console.log(getinfo);
+
+
+        // Constructor Function (the first letter should be uppercase)
+
+        function Phone(brand, color, make) {
+            this.brand = brand;
+            this.like = function () {
+                console.log(`i love ${brand}`);
+            }
+
+            console.log('this value is ', this); // Note:: if you run (this) inside of a objcet , will get current object 
+            // NOte:: if you run (this) inside of broswer, will get window base ()
+        }
+
+        const getobj = new Phone('iPhone'); // new = {} Note :: when we call
+
+        console.log(getobj.brand) // iphone
+        console.log(getobj.like()); // i love iphone 
+
+        const getobjkeys = Object.keys(getobj);
+        console.log(getobjkeys); //(2) ['brand', 'like']
+
+        console.log(Phone('sony')); // this value is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+
+        // => Adding Properties 
+        getobj.madeby = "china";
+        getobj['osversion'] = "IOS 18";
+        getobj.price = {
+            pro: 100, promax: 1500
+        }
+
+        getobj.color = function () {
+            console.log("All colors are same price");
+        }
+        console.log(getobj);
+
+
+        // =>Delete Properties 
+        delete getobj.madeby;
+        console.log(getobj);
+
+
+        // (ii) Constructor Function 
+        // Method 2 
+
+        const Computer = new Function('brand', `
+           this.brand = brand;
+           this.like = function(){
+           console.log("i love ${brand} computer")
+           }
+        `);
+
+        const getobj2 = new Computer("dell");
+
+        console.log(getobj2);
+        console.log(typeof getobj2); // obj
+        console.log(getobj2.brand); //dell
+        console.log(typeof getobj2.brand); // string
+        console.log(getobj2.like())
+        console.log(typeof getobj2.like()); // undefinded
+
+
+        const students = {
+            name: "aung aung",
+            age: 20
+        };
+
+        console.log(students);
+        console.log(students)
+
+        // Note:: Function are Object in JS 
+        console.log(Phone.name); // Phone
+        console.log(Computer.name); //anonymous 
+
+        console.log(Phone.length); // 3 (it's mean (Number like 1 2 3) parameter)
+        console.log(Computer.length); //1
+
+        for (let key in getobj2) {
+            // console.log(key, getobj2[key]);
+
+            if (typeof getobj2[key] !== "function") {
+                console.log(key, getobj2[key]);
+            }
+        }
+
+
+        for (let key in getobj2) console.log(key);
+
+
+        // =>Check properties in function
+        if ('brand' in getobj2) {
+            console.log("yes, getobj2 brand key")
+        } else {
+            console.log("No");
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!-- 10OBJ  -->

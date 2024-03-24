@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prototype</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //Inheritance
+        //(a) Object Base ( Object.prototype)
+        //(b) Array Base (Array.prototype)
+
+
+        // => In Terminal
+        let x = {};
+        console.log(x); // Prototype (we can call ObjectBase) it's directly or indirectly inherits from object base
+        let y = {}; //ObjectBase is the root of all objects in javascript
+        console.log(y);
+
+        //Method 1
+        Object.getPrototypeOf(x);
+        Object.getPrototypeOf(y);
+
+        x.__proto__;
+
+        Object.getPrototypeOf(x) === x.__proto__; // true
+
+        //Method 2
+
+        x.__proto__;
+        y.__proto__;
+
+
+        let arr = [];
+        console.log(arr); // Note : arr->Prototype (arrayBase Object) -> ObjectBase 
+
+
+        // => Property Description 
+
+        let person = {
+            name: "aung aung",
+            city: "yangon",
+            age: 20
+        };
+
+        console.log(person);
+
+        let objectbase = Object.getPrototypeOf(person);
+        console.log(objectbase);
+
+
+        let descriptor = Object.getOwnPropertyDescriptor(objectbase, "toString");
+        console.log(descriptor); // {writable: true, enumerable: false, configurable:true value:f}
+
+
+
+
+        Object.defineProperty(person, "name", {
+            // writable: true
+            // writable: false   // we can't overwite Object because we close
+
+            configurable: false // add person.name  ( second step )
+        })
+
+        // =>writable 
+
+        person.name = "su su";
+        person.phone = "famle"
+        console.log(person)
+        console.log(Object.keys(person));
+
+
+        // =>configurable 
+
+        delete person.name;  // delete person.name       (first step)
+        console.log(person)
+
+
+        // => Instance Members vs Prototype Members 
+
+        function Phone(brand) {
+            this.brand = brand;
+            this.like = function () {
+                // console.log(`I love ${brand}`); // get parameter 
+                console.log(`I love ${this.brand}`); // get property 
+            }
+
+        }
+
+        const getobj = new Phone("iPhone");
+        console.log(getobj); // Phone (brand: 'iPhone', like:f)
+        console.log(getobj.brand); // iPhone 
+        console.log(getobj.like())
+
+        const getobjkey = Object.keys(getobj);
+        console.log(getobjkey); // (2) ['brand','like']
+
+        function Mobile(brand) {
+            //instace number 
+            this.brand = brand;
+            this.color = function () {
+                // let getlike = this.like();
+                let getlike = "I love iphone";
+                console.log(`All colors are same proce.that is why ${getlike}`)
+            }
+
+            this.madeby = function () {
+                return "China";
+            }
+        }
+
+        //*error
+        // getobj2.like = function () {
+        //     return "i love oppo phone";
+        // }
+
+
+        //= Prototype Members 
+        Mobile.prototype.like = function () {
+            // return `i love sonyphone`;
+            // return `i love ${brand}`;   // this is from parameter . parameter can't be outside
+            return `i love ${this.brand}`; // i love samsaunge    // this is from properties . we can use this because properties are not private
+
+
+            let getmadeby = this.madeby();
+            return `i love ${this.brand},product by ${getmadeby}`
+        }
+
+
+
+        const getobj2 = new Mobile("Samsung");
+        console.log(getobj2); // Mobile {brand: 'Samsaung', color;f, madeby:f}
+        console.log(getobj2.color()); // All colors are same price.that is why i love miphone 
+        console.log(getobj2.madeby()) // china
+
+        // = Instance Members 
+        // getobj2.like = function () {
+        //     // return "i love oppo phone";
+
+        //     // return `i love ${brand}`;   // this is from parameter . parameter can't be outside
+        //     return `i love ${this.brand}`; // i love samsaunge    // this is from properties . we can use this because properties are not private
+        // }
+        // console.log(getobj2.like())
+
+
+
+        console.log(getobj2.like());
+
+        for (let key in getobj2) {
+            console.log(key)  // like() involves in instance member but like() is in prototype member
+        }
+
+        if (getobj2.hasOwnProperty('brand')) {
+            console.log('Yes');  // Yes
+        } else {
+            console.log('No')
+        }
+
+
+        if (getobj2.hasOwnProperty('like')) {
+            console.log('Yes');
+        } else {
+            console.log('No') // No because like is in prototype member
+        }
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
+
+<!-- 24OP  -->
